@@ -1,16 +1,18 @@
-<div class="span12" >
+<div ng-controller="EntryCtrl" class="span12" >
   <div class="row">
-    <div class="span2" style="margin-top: 40px">
-      <ul>
-        <li><a href="#">Note 1</a></li>
-        <li><a href="#">Note 2</a></li>
-        <li><a href="#">Note 3</a></li>
+    <div class="span2" style="margin-top: 40px; padding-right: 50px;">
+      <form ng-submit="addEntry()">
+        <input type="text" ng-model="newEntry.subject" placeholder="Entry Subject" />
+      </form>
+      <ul ng-repeat="entry in entries">
+        <li><a style="cursor:pointer" ng-click="viewNote(entry)">{{entry.subject}}</a></li>
       </ul>
     </div>
-    <div class="paper span8">
-      <p><Strong>Note 1</Strong></p>
-      
-      <p>Hello World, This is my Diary.</p>
+    <div class="span8">
+      <form ng-submit="updateNote()">
+        <textarea class="paper" ng-model="entry.note">{{entry.note}}</textarea>
+        <input type="submit" class="btn btn-primary align-top" style="vertical-align: top" value="Update">
+      </form>
     </div>
     <div class="span2">
     </div>
