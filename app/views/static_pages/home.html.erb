@@ -5,11 +5,14 @@
         <input type="text" ng-model="newEntry.subject" placeholder="Entry Subject" />
       </form>
       <ul ng-repeat="entry in entries">
-        <li><a style="cursor:pointer" ng-click="viewNote(entry)">{{entry.subject}}</a></li>
+        <li>
+          <a style="cursor:pointer" ng-click="viewNote(entry)">{{entry.date}}-{{entry.subject}}</a>
+          <span><i class="icon-trash" style="cursor:pointer" alt="delete" ng-click="deleteEntry(entry)"></i></span>
+        </li>
       </ul>
     </div>
     <div class="span8">
-      <form ng-submit="updateNote()">
+      <form ng-submit="updateEntry(entry)">
         <textarea class="paper" ng-model="entry.note">{{entry.note}}</textarea>
         <input type="submit" class="btn btn-primary align-top" style="vertical-align: top" value="Update">
       </form>

@@ -14,4 +14,8 @@ group :assets do
   gem "twitter-bootstrap-rails"
 end
 
+group :development do
+  gem 'debugger'
+end
+
 gem 'jquery-rails'

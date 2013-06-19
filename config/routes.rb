@@ -1,5 +1,5 @@
 Diary::Application.routes.draw do
-  get "entry/index"
+  resources :entry
 
-  root to: "entry#index"
+  root to: "static_pages#home"
 end
